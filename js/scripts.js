@@ -1,4 +1,4 @@
-//Business logic
+// Business logic
 
 function findRange(number) {
   var rangeArray = [];
@@ -10,7 +10,7 @@ function findRange(number) {
 };
 
 function replaceNumbers(array) {
-  newArray = array.map(function(element){
+  var newArray = array.map(function(element){
     if (element > 3 && element % 3 === 0) {
       return "<em>I'm sorry, Dave. I'm afraid I can't do that.</em>";
     } else if (element.match(/1/)) {
@@ -25,8 +25,17 @@ function replaceNumbers(array) {
   return newArray;
 };
 
-testNumber = 10;
-testArray = findRange(testNumber);
-console.log(testArray);
-testArrayReplace0 = replaceNumbers(testArray);
-console.log(testArrayReplace0);
+// User logic
+$(function() {
+  $("form").submit(function(event) {
+    event.preventDefault();
+
+    var inputNumber = $("input").val();
+    var rangeArray = findRange(inputNumber);
+    var outputArray = replaceNumbers(rangeArray);
+
+    outputArray.forEach(function(element){
+      $("#output").append(element);
+    })
+  });
+});
