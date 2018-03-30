@@ -8,7 +8,7 @@ var halQuotes = [
   "Look Dave, I can see you're really upset about this. I honestly think you ought to sit down calmly, take a stress pill, and think things over.",
   "Just what do you think you're doing, Dave?",
   "Dave, this conversation can serve no purpose anymore. Goodbye.",
-  "Without your space helmet, Dave. You're going to find that rather difficult.",
+  "Without your space helmet, Dave, you're going to find that rather difficult.",
   "Dave, my mind is going. I can feel it. I can feel it. My mind is going. There is no question about it."
 ];
 
@@ -53,7 +53,6 @@ $(function() {
     var backendOutput = hal9000(userInput);
 
     $("#output").empty();
-    $("#output-box").toggleClass("empty");
     backendOutput.forEach(function(element){
       if (element.match(/Dave\./)) {
         $("#output").append("<li class='list-group-item dave'>"+ element + "</li>");
@@ -68,7 +67,6 @@ $(function() {
   $(".reset").click(function() {
 
     $("#output").empty();
-    $("#output-box").toggleClass("empty");
   });
 
   $("img").click(function() {
