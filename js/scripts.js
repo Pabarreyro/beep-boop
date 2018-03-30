@@ -41,7 +41,7 @@ $(function() {
     var backendOutput = hal9000(userInput);
 
     backendOutput.forEach(function(element){
-      $("#output").append(element);
+      $("#output").append("<li>"+ element + "</li>");
     });
   });
 });
