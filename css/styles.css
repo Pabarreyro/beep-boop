@@ -65,8 +65,11 @@ body {
 
 .form-control {
   background-color: #222323;
+  width: 17vw;
+  text-align: center;
   color: #b62f26;
-  font-weight: bold;
+  font-weight: normal;
+
 }
 
 .form-control::placeholder {
