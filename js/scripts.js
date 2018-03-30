@@ -11,7 +11,9 @@ function findRange(number) {
 
 function replaceNumbers(array) {
   newArray = array.map(function(element){
-    if (element.match(/0/)) {
+    if (element.match(/1/)) {
+      return "<em>Boop!</em>";
+    } else if (element.match(/0/)) {
       return "<em>Beep!</em>";
     } else {
       return element;
