@@ -40,8 +40,22 @@ $(function() {
     var userInput = $("input").val();
     var backendOutput = hal9000(userInput);
 
+    $("#output").empty();
+    $("#output-box").toggleClass("empty");
     backendOutput.forEach(function(element){
-      $("#output").append("<li>"+ element + "</li>");
+      if (element.match(/Dave\./)) {
+        $("#output").append("<li class='dave'>"+ element + "</li>");
+      } else if (element.match(/B[eo]+p!/)){
+        $("#output").append("<li class='beep_boop'>"+ element + "</li>");
+      } else {
+        $("#output").append("<li>"+ element + "</li>");
+      }
     });
   });
+
+  $(".reset").click(function() {
+
+    $("#output").empty();
+    $("#output-box").toggleClass("empty");
+  })
 });

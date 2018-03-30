@@ -1,12 +1,14 @@
 body {
+  margin-top: 2vh;
   background: url(http://orig14.deviantart.net/9a9d/f/2016/068/a/8/dark_geometric_wallpaper___fullhd___1080p_by_dearvoodoo-d9ujiwe.png) center repeat;
 }
 
 .container-1 {
-  padding: 5px;
+  padding: 2vh 1vw;
   width: 70vw;
   border: .5vw solid #c7c4c5;
-  background-color: rgb(13,13,13,0.75);
+  background: linear-gradient(to bottom, rgba(28,28,28, 0.85), rgba(8,8,8,0.85));
+  /* background-color: rgba(13,13,13,0.75); */
   text-align: center;
 }
 
@@ -45,7 +47,7 @@ body {
 .container img {
   width: 25vw;
   max-width: 100%;
-  margin: 1em;
+  margin: 8em 1em 2em 1em;
 }
 
 .input-box {
@@ -77,11 +79,24 @@ body {
   padding: 5px;
   width: 70vw;
   border: .5vw solid #c7c4c5;
-  background-color: rgb(13,13,13,0.75);
+  background: rgba(80,80,80,0.3);
   text-align: center;
 }
 
 #output {
   list-style: none;
   color: white;
+}
+
+.empty {
+  height: 10vh;
+  max-height: 100%;
+}
+
+.dave {
+  color: #b62f26;
+}
+
+.beep_boop {
+  color: #ffd454;
 }
