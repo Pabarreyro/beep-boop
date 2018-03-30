@@ -1,5 +1,5 @@
 // Business logic
-var halQuotes = [
+let halQuotes = [
   "I know I've made some very poor decisions recently, but I can give you my complete assurance that my work will be back to normal. I've still got the greatest enthusiasm and confidence in the mission. And I want to help you.",
   "This mission is too important for me to allow you to jeopardize it.",
   "I am putting myself to the fullest possible use, which is all I think that any conscious entity can ever hope to do.",
@@ -13,16 +13,16 @@ var halQuotes = [
 ];
 
 function findRange(number) {
-  var rangeArray = [];
+  let rangeArray = [];
 
-  for (var i = 0; i <= number; i++) {
+  for (let i = 0; i <= number; i++) {
     rangeArray.push(i.toString());
   }
   return rangeArray;
 };
 
 function replaceNumbers(array) {
-  var newArray = array.map(function(element){
+  let newArray = array.map(function(element){
     if (element > 3 && element % 3 === 0) {
       return "<em>I'm sorry, Dave. I'm afraid I can't do that.</em>";
     } else if (element.match(/1/)) {
@@ -38,24 +38,37 @@ function replaceNumbers(array) {
 };
 
 function hal9000(number){
-  var rangeArray = findRange(number);
-  var outputArray = replaceNumbers(rangeArray);
+  let rangeArray = findRange(number);
+  let outputArray = replaceNumbers(rangeArray);
 
   return outputArray;
 }
 
 // User logic
 $(function() {
+  let userName = prompt("Enter your name: ");
+
+  if (userName !== null) {
+    $("input").attr("placeholder", "Enter a number, " + userName)
+  } else {
+    $("input").attr("placeholder", "Enter a number, Dave ")
+  }
+
+
   $("form").submit(function(event) {
     event.preventDefault();
 
-    var userInput = $("input").val();
-    var backendOutput = hal9000(userInput);
+    let userInput = $("input").val();
+    let backendOutput = hal9000(userInput);
 
     $("#output").empty();
     backendOutput.forEach(function(element){
       if (element.match(/Dave\./)) {
-        $("#output").append("<li class='list-group-item dave'>"+ element + "</li>");
+        if (userName !== null) {
+          $("#output").append("<li class='list-group-item dave'>"+ element.replace(/Dave/, userName) + "</li>");
+        } else {
+          $("#output").append("<li class='list-group-item dave'>"+ element + "</li>");
+        }
       } else if (element.match(/B[eo]+p!/)){
         $("#output").append("<li class='list-group-item beep_boop'>"+ element + "</li>");
       } else {
@@ -70,10 +83,14 @@ $(function() {
   });
 
   $("img").click(function() {
-    var quoteIndex = Math.floor((Math.random() * 10) + 1);
-    var halOutput = halQuotes[quoteIndex-1];
+    let quoteIndex = Math.floor((Math.random() * 10) + 1);
+    let halOutput = halQuotes[quoteIndex-1];
 
     $("#output").empty();
-    $("#output").append("<li class='list-group-item dave'>"+ halOutput + "</li>");
+    if (userName !== null) {
+      $("#output").append("<li class='list-group-item dave'>"+ halOutput.replace(/Dave/g, userName) + "</li>");
+    } else {
+      $("#output").append("<li class='list-group-item dave'>"+ halOutput + "</li>");
+    }
   });
 });
