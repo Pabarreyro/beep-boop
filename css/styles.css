@@ -48,6 +48,12 @@ body {
   width: 25vw;
   max-width: 100%;
   margin: 8em 1em 2em 1em;
+  cursor: pointer;
+}
+
+.container img:hover {
+  max-width: 100%;
+  margin: 8em 1em 2em 1em;
 }
 
 .input-box {
@@ -86,11 +92,16 @@ body {
 #output {
   list-style: none;
   color: white;
+  font-size: 50;
 }
 
 .empty {
   height: 10vh;
   max-height: 100%;
+}
+
+.list-group-item {
+  background-color: transparent;
 }
 
 .dave {
