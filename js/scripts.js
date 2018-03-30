@@ -25,17 +25,23 @@ function replaceNumbers(array) {
   return newArray;
 };
 
+function hal9000(number){
+  var rangeArray = findRange(number);
+  var outputArray = replaceNumbers(rangeArray);
+
+  return outputArray;
+}
+
 // User logic
 $(function() {
   $("form").submit(function(event) {
     event.preventDefault();
 
-    var inputNumber = $("input").val();
-    var rangeArray = findRange(inputNumber);
-    var outputArray = replaceNumbers(rangeArray);
+    var userInput = $("input").val();
+    var backendOutput = hal9000(userInput);
 
-    outputArray.forEach(function(element){
+    backendOutput.forEach(function(element){
       $("#output").append(element);
-    })
+    });
   });
 });
