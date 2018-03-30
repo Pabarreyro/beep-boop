@@ -72,6 +72,7 @@ $(function() {
     let backendOutput = hal9000(userInput);
 
     $("#output").empty();
+
     backendOutput.forEach(function(element){
       if (element.match(/Dave\./)) {
         if (userName) {
@@ -92,7 +93,7 @@ $(function() {
     $("#output").empty();
   });
 
-  $("img").click(function() {
+  $("#bigHal").click(function() {
     let quoteIndex = Math.floor((Math.random() * 10) + 1);
     let halOutput = halQuotes[quoteIndex-1];
 

@@ -116,7 +116,6 @@ body {
   color: #ffd454;
 }
 
-
 .modal {
   display: none;
   color: black;
@@ -131,7 +130,7 @@ body {
   background-color: rgba(0,0,0,0.4);
 }
 
-.modal-content {
+.modalContent {
   display: block;
   background-color: rgba(8,8,8,0.85);
   margin: auto auto;
@@ -143,7 +142,7 @@ body {
   text-align: center;
 }
 
-#smallHal {
+#babyHal {
   float: left;
 }
 
@@ -163,7 +162,7 @@ body {
   margin-left: 5vw;
 }
 
-.modal-content img {
+.modalContent img {
   width: fit-content;
 }
 
