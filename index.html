@@ -13,18 +13,18 @@
     <script src="js/scripts.js" type="text/javascript"></script>
   </head>
   <body>
-    <div class="container container-1">
-      <div id="modalHal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
+    <div id="modalContainer" class="modal">
+      <div class="modal-content">
           <form id="modalForm">
+            <img src="img/babyhal.ico" alt="small Hal" id="smallHal">
             <div class="form-row">
-              <input class="form-control" placeholder="Enter your name">
+              <input class="form-control" placeholder="Enter your name" id="nameField">
               <button type="submit" class="btn btn-danger">Submit</button>
             </div>
           </form>
-        </div>
       </div>
+    </div>
+    <div class="container container-1">
       <div class="head">
         <div class="row title">
           <div class="" id="hal">
@@ -44,12 +44,11 @@
           <button type="reset" class="btn btn-secondary reset">Reset</button>
         </form>
       </div>
-      <img src="img/hal.png" alt="">
+      <img src="img/hal.png" alt="large Hal" id="bigHal">
     </div>
     <div class="container container-2">
       <div class="empty" id="output-box">
         <ul class="list-group list-group-flush" id="output">
-
         </ul>
       </div>
     </div>

@@ -48,7 +48,7 @@ function hal9000(number){
 $(function() {
   let userName;
 
-  $("#modalHal").css("display", "block");
+  $("#modalContainer").css("display", "block");
   $("#modalForm").submit(function(event) {
     event.preventDefault();
 
@@ -60,7 +60,7 @@ $(function() {
       $("#pageForm input").attr("placeholder", "Enter a number, Dave ")
     }
 
-    $("#modalHal").css("display", "none");
+    $("#modalContainer").css("display", "none");
 
   });
 
