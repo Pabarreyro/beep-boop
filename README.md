@@ -14,14 +14,14 @@ A web application that takes a number from a user and returns a range of numbers
 
 Behavior | Input | Ouput
 ------------ | ------------- | -------------
-1. Takes number(_n_) and returns range from 0 to n| 10 | [0,1,2,3,4,5,6,7,8,9,10]
-2. Finds numbers in range(0-_n_) with 1+ occurrence of 0 and replaces with _"Beep!"_ | [0,1,2,3 ... 8,9,10] | [_"Beep!"_,1,2,3 ... 8,9,_"Beep!"_]
-3. Finds numbers in range(0-_n_) with 1+ occurrence of 1 and replaces with _"Boop!"_ | [0,1,2,3 ... 8,9,10] | [0,_"Boop!"_,2,3 ... 8,9,_"Boop!"_]
-4. Find numbers in range(0-n) divisible by 3 and replaces with _"I'm sorry, Dave. I'm afraid I can't do that."_ | [0,1,2,3 ... 8,9,10] | [0,1,2,_"I'm sorry, Dave. I'm afraid I can't do that."_ ... 8,_"I'm sorry, Dave. I'm afraid I can't do that."_,10]
-5. Applies 'divisible by 3' rule over 'contains 1' rule | [... 17, 18] | [..., _"Boop!"_, _"I'm sorry, Dave. I'm afraid I can't do that."_]
-6. Applies 'contains 1' rule over 'contains 0' rule | [... 9, 10 ]| [... 9, _"Boop!"_ ]
-7. Validates input number type | "ten" | "Please input your number in digits (0-9)"
-8. Allows multiple inputs without reloading page| $("#myForm").reset() | "Enter number here"
+Takes number(_n_) and returns range from 0 to n| 10 | [0,1,2,3,4,5,6,7,8,9,10]
+Finds numbers in range(0-_n_) with 1+ occurrence of 0 and replaces with _"Beep!"_ | [0,1,2,3 ... 8,9,10] | [_"Beep!"_,1,2,3 ... 8,9,_"Beep!"_]
+Finds numbers in range(0-_n_) with 1+ occurrence of 1 and replaces with _"Boop!"_ | [0,1,2,3 ... 8,9,10] | [0,_"Boop!"_,2,3 ... 8,9,_"Boop!"_]
+Find numbers in range(0-n) divisible by 3 and replaces with _"I'm sorry, Dave. I'm afraid I can't do that."_ | [0,1,2,3 ... 8,9,10] | [0,1,2,_"I'm sorry, Dave. I'm afraid I can't do that."_ ... 8,_"I'm sorry, Dave. I'm afraid I can't do that."_,10]
+Applies 'divisible by 3' rule over 'contains 1' rule | [... 17, 18] | [..., _"Boop!"_, _"I'm sorry, Dave. I'm afraid I can't do that."_]
+Applies 'contains 1' rule over 'contains 0' rule | [... 9, 10 ]| [... 9, _"Boop!"_ ]
+Validates input number type | "ten" | "Please input your number in digits (0-9)"
+Allows multiple inputs without reloading page| $("#myForm").reset() | "Enter number here"
 
 
 ## Setup/Installation Requirements
