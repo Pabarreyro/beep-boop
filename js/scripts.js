@@ -29,7 +29,6 @@ $(function() {
     event.preventDefault();
 
     userName = $("#modalForm input").val();
-
     if (userName) {
       $("#pageForm input").attr("placeholder", "Enter a number, " + userName);
     } else {
@@ -37,7 +36,6 @@ $(function() {
     }
 
     $("#modalContainer").css("display", "none");
-
   });
 
   $("#pageForm").submit(function(event) {
@@ -71,7 +69,6 @@ $(function() {
         $("#output").append("<li class='list-group-item'>"+ element + "</li>");
       }
     });
-
     $("input").val("");
   });
 
