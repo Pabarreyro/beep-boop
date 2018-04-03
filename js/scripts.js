@@ -14,34 +14,10 @@ let halQuotes = [
 
 function findRange(number) {
   let rangeArray = [];
-
   for (let i = 0; i <= number; i++) {
     rangeArray.push(i.toString());
   }
   return rangeArray;
-};
-
-function replaceNumbers(array) {
-  let newArray = array.map(function(element){
-    if (element >= 3 && element % 3 === 0) {
-      return "<em>I'm sorry, Dave. I'm afraid I can't do that.</em>";
-    } else if (element.match(/1/)) {
-      return "<em>Boop!</em>";
-    } else if (element.match(/0/)) {
-      return "<em>Beep!</em>";
-    } else {
-      return element;
-    }
-  });
-
-  return newArray;
-};
-
-function hal9000(number){
-  let rangeArray = findRange(number);
-  let outputArray = replaceNumbers(rangeArray);
-
-  return outputArray;
 }
 
 // User logic
@@ -55,25 +31,34 @@ $(function() {
     userName = $("#modalForm input").val();
 
     if (userName) {
-      $("#pageForm input").attr("placeholder", "Enter a number, " + userName)
+      $("#pageForm input").attr("placeholder", "Enter a number, " + userName);
     } else {
-      $("#pageForm input").attr("placeholder", "Enter a number, Dave ")
+      $("#pageForm input").attr("placeholder", "Enter a number, Dave ");
     }
 
     $("#modalContainer").css("display", "none");
 
   });
 
-
   $("#pageForm").submit(function(event) {
     event.preventDefault();
 
     let userInput = $("#pageForm input").val();
-    let backendOutput = hal9000(userInput);
+    let initialArray = findRange(userInput);
+    let outputArray = initialArray.map(function(element){
+      if (element >= 3 && element % 3 === 0) {
+        return "<em>I'm sorry, Dave. I'm afraid I can't do that.</em>";
+      } else if (element.match(/1/)) {
+        return "<em>Boop!</em>";
+      } else if (element.match(/0/)) {
+        return "<em>Beep!</em>";
+      } else {
+        return element;
+      }
+    });
 
     $("#output").empty();
-
-    backendOutput.forEach(function(element){
+    outputArray.forEach(function(element){
       if (element.match(/Dave\./)) {
         if (userName) {
           $("#output").append("<li class='list-group-item dave'>"+ element.replace(/Dave/, userName) + "</li>");
@@ -86,10 +71,11 @@ $(function() {
         $("#output").append("<li class='list-group-item'>"+ element + "</li>");
       }
     });
+
+    $("input").val("");
   });
 
   $(".reset").click(function() {
-
     $("#output").empty();
   });
 
